@@ -23,6 +23,7 @@ The `tsconfig.json` file stores the TypeScript configuration for your applicatio
 The following configuration options are required for AdonisJS internals to work correctly.
 
 ```json
+// title: tsconfig.json
 {
   "compilerOptions": {
     "module": "NodeNext",

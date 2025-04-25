@@ -75,6 +75,7 @@ The `Env.create` method accepts the validation schema as a key-value pair.
 - The value is the function that performs the validation. It can be a custom inline function or a reference to pre-defined schema methods like `schema.string` or `schema.number`.
 
 ```ts
+// title: start/env.ts
 import Env from '@adonisjs/core/env'
 
 /**
@@ -400,6 +401,8 @@ EnvParser.defineIdentifierIfMissing('base64', (value) => {
 
 You can directly use those methods inside the `start/env.ts` file.
 
+:::
+
 ```ts
 // title: start/env.ts
 import { Env } from '@adonisjs/core/env'
@@ -413,7 +416,6 @@ export default await Env.create(APP_ROOT, {
 })
 ```
 
-:::
 
 ## Using variables inside the dot-env files
 
@@ -422,6 +424,7 @@ Within dot-env files, you can reference other environment variables using the va
 We compute the `APP_URL` from the `HOST` and the `PORT` properties in the following example.
 
 ```dotenv
+// title: .env
 HOST=localhost
 PORT=3333
 // highlight-start
@@ -432,6 +435,7 @@ URL=$HOST:$PORT
 All **letter**, **numbers**, and the **underscore (_)** after the `$` sign are used to form a variable name. You must wrap the variable name inside curly braces `{}` if the name has special characters other than an underscore.
 
 ```dotenv
+// title: .env
 REDIS-USER=admin
 REDIS-URL=localhost@${REDIS-USER}
 ```
@@ -441,5 +445,6 @@ REDIS-URL=localhost@${REDIS-USER}
 To use the `$` sign as a value, you must escape it to prevent variable substitution.
 
 ```dotenv
+// title: .env
 PASSWORD=pa\$\$word
 ```

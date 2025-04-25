@@ -164,6 +164,7 @@ It is recommended to turn off rollbacks in production inside the config/database
 Disabling rollbacks in production will ensure that the `node ace migration:rollback` command results in an error.
 
 ```js
+// title: config/database.ts
 {
   pg: {
     client: 'pg',

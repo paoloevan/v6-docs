@@ -55,6 +55,7 @@ If you are creating a third-party package, you should not directly import the co
 Instead, you should use the config service to access the config values inside a service provider. For example:
 
 ```ts
+// title: providers/drive_service_provider.ts
 import { ApplicationService } from '@adonisjs/core/types'
 
 export default class DriveServiceProvider {
@@ -94,6 +95,7 @@ You can use the `config.has` method to check if a configuration value exists for
 You can update the location for the config directory by modifying the [`adonisrc.ts`](../concepts/adonisrc_file.md) file. After the change, the config files will be imported from the new location.
 
 ```ts
+// title: adonisrc.ts
 directories: {
   config: './configurations'
 }
@@ -102,6 +104,7 @@ directories: {
 Make sure to update the import alias within the `package.json` file.
 
 ```json
+  // title: package.json
 {
   "imports": {
     "#config/*": "./configurations/*.js"
