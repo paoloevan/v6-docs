@@ -85,6 +85,7 @@ You can create and register a preload file using the `node ace make:preload` com
 
 
 ```ts
+// title: adonisrc.ts
 {
   preloads: [
     () => import('./start/view.js')
@@ -93,6 +94,7 @@ You can create and register a preload file using the `node ace make:preload` com
 ```
 
 ```ts
+// title: adonisrc.ts
 {
   preloads: [
     {
@@ -117,6 +119,7 @@ These are non-TypeScript/JavaScript files that must exist in the production buil
 - `reloadServer`: Reload the development server when matching files change.
 
 ```ts
+// title: adonisrc.ts
 {
   metaFiles: [
     {
@@ -137,6 +140,7 @@ An array of functions to lazy import ace commands from installed packages. Your 
 See also: [Creating ace commands](../ace/creating_commands.md)
 
 ```ts
+// title: adonisrc.ts
 {
   commands: [
     () => import('@adonisjs/core/commands'),
@@ -151,6 +155,7 @@ A key-value pair of command aliases. This is usually to help you create memorabl
 See also: [Creating command aliases](../ace/introduction.md#creating-command-aliases)
 
 ```ts
+// title: adonisrc.ts
 {
   commandsAliases: {
     migrate: 'migration:run'
@@ -161,6 +166,7 @@ See also: [Creating command aliases](../ace/introduction.md#creating-command-ali
 You can also define multiple aliases for the same command.
 
 ```ts
+// title: adonisrc.ts
 {
   commandsAliases: {
     migrate: 'migration:run',
@@ -176,6 +182,7 @@ The `tests` object registers the test suites and some of the global settings for
 See also: [Introduction to testing](../testing/introduction.md)
 
 ```ts
+// title: adonisrc.ts
 {
   tests: {
     timeout: 2000,
@@ -216,6 +223,7 @@ Providers are loaded in the same order as registered inside the `providers` arra
 See also: [Service providers](./service_providers.md)
 
 ```ts
+// title: adonisrc.ts
 {
   providers: [
     () => import('@adonisjs/core/providers/app_provider'),
@@ -227,6 +235,7 @@ See also: [Service providers](./service_providers.md)
 ```
 
 ```ts
+// title: adonisrc.ts
 {
   providers: [
     {
@@ -258,6 +267,7 @@ The detection is performed for [vite](https://vitejs.dev) by searching for the `
 However, if you use a different assets bundler, you can configure it inside the `adonisrc.ts` file as follows.
 
 ```ts
+// title: adonisrc.ts
 {
   assetsBundler: {
     name: 'vite',
